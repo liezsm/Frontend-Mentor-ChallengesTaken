@@ -1,0 +1,137 @@
+.card-container {
+  background: white;
+  width: 330px;
+  height: 560px;
+
+  @include desktop {
+    height: 40rem;
+    width: 25rem;
+  }
+  border-radius: 10px;
+
+  img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+@mixin d-flex($direction, $jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $direction;
+}
+.order-summary {
+  @include d-flex(column, center, center);
+  padding: 2.125rem 2rem;
+
+  > * {
+    // margin-bottom: 1rem;
+    // border: 2px solid yellowgreen;
+    width: 100%;
+  }
+
+  &-text {
+    h2 {
+      font-size: 1.375rem;
+      color: color(dark-Blue);
+
+      @include desktop {
+        font-size: 1.625rem;
+        font-weight: 900;
+      }
+    }
+    p {
+      color: gray;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  &-plan {
+    @include d-flex(row, space-between, center);
+    padding: 2.5rem 0;
+
+    a {
+      font-size: 0.75rem;
+    }
+    a:hover {
+      text-decoration: none;
+      color: rgba(color(bright-blue), 0.6);
+    }
+  }
+
+  &-cta-wrap {
+    @include d-flex(column, center, center);
+
+    > * {
+      width: 100%;
+    }
+
+    button {
+      border: none;
+      border-radius: 0.4rem;
+      color: #fff;
+      outline: none;
+      background: transparent;
+      padding: 1rem 3.875rem;
+      font-weight: 700;
+    }
+  }
+}
+
+#payment {
+  background-color: color(bright-blue);
+  height: 2.9375rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(color(bright-blue), 0.6);
+  }
+}
+
+#cancel {
+  color: gray;
+  font-weight: 900;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.plan-container {
+  @include d-flex(row, center, center);
+  // border: 2px solid red;
+  :first-child {
+    margin-right: 1rem;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+.plan-price {
+  width: 100%;
+  @include d-flex(column, center, center);
+  line-height: 1.6;
+
+  small {
+    color: gray;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  p {
+    font-size: 0.8125rem;
+  }
+
+  @include desktop {
+    // border: 2px solid green;
+    width: 150px;
+    small,
+    p {
+      font-size: 1rem;
+    }
+  }
+}

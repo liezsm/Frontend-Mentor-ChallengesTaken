@@ -1,0 +1,45 @@
+//  screen sizes
+
+$mobile: 375px;
+$desktop: 992px;
+
+//  colors
+$colors: (
+  pale-blue: hsl(225, 100%, 94%),
+  bright-blue: hsl(245, 75%, 52%),
+  paler-blue: hsl(225, 100%, 98%),
+  desaturated-blue: hsl(224, 23%, 55%),
+  dark-Blue: hsl(223, 47%, 23%),
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+//  font size
+
+$fontSize: 16px;
+
+//  font family
+
+$fontFamily: Red-hat;
+
+//  font weights
+
+$font-weights: (
+  regular: 500,
+  medium: 700,
+  bold: 900,
+);
+
+@function fontWeight($font-weight) {
+  @return map-get($font-weights, $font-weight);
+}
+
+// media queries
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}

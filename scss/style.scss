@@ -1,0 +1,26 @@
+@import "reset";
+@import "variables";
+@import "cards";
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(color(desaturated-blue), 0.5),
+      rgba(color(pale-blue), 0.9)
+    ),
+    url("/order-summary-component-main/order-summary-component-main/images/pattern-background-mobile.svg")
+      center -200px / cover no-repeat fixed;
+
+  @include desktop {
+    background: url("/order-summary-component-main/order-summary-component-main/images/pattern-background-desktop.svg")
+      center -25vw / cover no-repeat;
+
+    background-color: color(pale-blue);
+  }
+  font-family: "Red Hat Display", sans-serif;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
